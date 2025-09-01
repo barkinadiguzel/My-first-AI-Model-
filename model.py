@@ -94,3 +94,8 @@ MODEL_NAME = "01_pytorch_workflow_model_0.pth"
 MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
 torch.save(model0.state_dict(), MODEL_SAVE_PATH)
 print(f"Saved model to: {MODEL_SAVE_PATH}")
+
+# Load model
+
+model0 = LinearRegressionModel()
+model0.load_state_dict(torch.load(Path("models") / "01_pytorch_workflow_model_0.pth"))
